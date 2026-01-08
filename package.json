@@ -1,5 +1,5 @@
 {
-  "name": "eml-to-pdf-render",
+  "name": "@anon2098/eml-to-pdf-render",
   "version": "1.0.0",
   "description": "EML to PDF converter using Playwright/Chromium for accurate HTML rendering",
   "type": "module",

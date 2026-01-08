@@ -25,7 +25,7 @@ Convert EML email files to PDF with pixel-perfect rendering using headless Chrom
 ### Option 1: Install globally from npm
 
 ```bash
-npm install -g eml-to-pdf-render
+npm install -g @anon2098/eml-to-pdf-render
 ```
 
 ### Option 2: Install globally from GitHub
