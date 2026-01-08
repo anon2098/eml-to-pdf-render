@@ -4,6 +4,9 @@
   "description": "EML to PDF converter using Playwright/Chromium for accurate HTML rendering",
   "type": "module",
   "main": "src/convert.js",
+  "bin": {
+    "eml-to-pdf": "src/convert.js"
+  },
   "scripts": {
     "convert": "node src/convert.js"
   },

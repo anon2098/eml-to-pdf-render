@@ -2,6 +2,7 @@
 
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![npm version](https://img.shields.io/npm/v/eml-to-pdf-render.svg)](https://www.npmjs.com/package/eml-to-pdf-render)
 
 Convert EML email files to PDF with pixel-perfect rendering using headless Chromium. Preserves the original email layout, inline images, and appends PDF attachments.
 
@@ -21,34 +22,51 @@ Convert EML email files to PDF with pixel-perfect rendering using headless Chrom
 
 ## 🚀 Installation
 
+### Option 1: Install globally from npm
+
+```bash
+npm install -g eml-to-pdf-render
+```
+
+### Option 2: Install globally from GitHub
+
+```bash
+npm install -g github:anon2098/eml-to-pdf-render
+```
+
+### Option 3: Clone and install locally
+
 ```bash
 git clone https://github.com/anon2098/eml-to-pdf-render.git
 cd eml-to-pdf-render
 npm install
+npm link  # Makes 'eml-to-pdf' command available globally
 ```
 
-This will install all dependencies including Playwright, which will download a compatible Chromium browser.
+After installation, Playwright will automatically download a compatible Chromium browser.
 
 ## 📖 Usage
 
-### Single File Conversion
+### Command Line (after global install)
 
 ```bash
-# Convert with auto-generated output path
-node src/convert.js /path/to/email.eml
+# Convert single file
+eml-to-pdf /path/to/email.eml
 
-# Convert to specific output file
-node src/convert.js /path/to/email.eml /path/to/output.pdf
+# Convert to specific output
+eml-to-pdf /path/to/email.eml /path/to/output.pdf
+
+# Batch convert directory
+eml-to-pdf /path/to/emails/
+
+# Batch convert to specific output directory
+eml-to-pdf /path/to/emails/ /path/to/output/
 ```
 
-### Batch Conversion
+### Using Node directly
 
 ```bash
-# Convert all EML files in a directory
-node src/convert.js /path/to/emails/
-
-# Convert to specific output directory
-node src/convert.js /path/to/emails/ /path/to/output/
+node src/convert.js /path/to/email.eml
 ```
 
 ### Output Naming
