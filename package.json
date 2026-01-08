@@ -1,0 +1,31 @@
+{
+  "name": "eml-to-pdf-render",
+  "version": "1.0.0",
+  "description": "EML to PDF converter using Playwright/Chromium for accurate HTML rendering",
+  "type": "module",
+  "main": "src/convert.js",
+  "scripts": {
+    "convert": "node src/convert.js"
+  },
+  "keywords": ["eml", "pdf", "email", "converter", "playwright", "chromium"],
+  "author": "anon2098",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anon2098/eml-to-pdf-render.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anon2098/eml-to-pdf-render/issues"
+  },
+  "homepage": "https://github.com/anon2098/eml-to-pdf-render#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "mailparser": "^3.7.1",
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.40.0"
+  }
+}
+
