@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @page { 
+      size: A4; 
+      margin: 0.2in !important;
+      page-break-before: avoid !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+    /* Override Microsoft Word page sections */
+    div[class*="WordSection"] { 
+      page: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+    }
+    /* Extremely aggressive page-break prevention */
+    * { 
+      page-break-before: avoid !important; 
+      page-break-after: avoid !important; 
+      page-break-inside: avoid !important;
+      break-before: avoid !important;
+      break-after: avoid !important;
+      break-inside: avoid !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+    }
+    /* Even more aggressive page break prevention for specific elements */
+    div, p, span, table, tr, td, th, ul, ol, li, h1, h2, h3, h4, h5, h6, section, article, blockquote, q, font {
+      page-break-before: avoid !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+      break-before: avoid !important;
+      break-after: avoid !important;
+      break-inside: avoid !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+    }
+    html, body { 
+      margin: 0 !important; 
+      padding: 0 !important; 
+      width: 100%;
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+      display: block !important;
+    }
+    body { 
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.3 !important;
+      display: block !important;
+    }
+    /* Aggressively compact all elements */
+    p, div, table, tr, td, th, span, blockquote { 
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      line-height: 1.2 !important;
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+      display: block !important;
+    }
+    /* Specific rules for email replies and quotes */
+    blockquote, .gmail_quote, .yahoo_quoted, .outlook_quoted, [class*="quote"], [class*="reply"], [id*="reply"], [id*="quote"] {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+    }
+    blockquote *, .gmail_quote *, .yahoo_quoted *, .outlook_quoted *, [class*="quote"] *, [class*="reply"] *, [id*="reply"] *, [id*="quote"] * {
+      page-break-before: avoid !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+      break-before: avoid !important;
+      break-after: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+    }
+    /* Special handling for deeply nested quote structures */
+    div[class*="quote"], div[class*="reply"] {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+    }
+    /* Handle email signatures */
+    div[style*="page-break-inside: avoid"] {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+    }
+    /* Force inline display for images to prevent layout issues */
+    img { 
+      max-width: 100% !important; 
+      height: auto !important;
+      max-height: 150px !important;
+      display: inline !important;
+      page-break-inside: avoid !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    table { 
+      border-collapse: collapse !important; 
+      margin: 0 !important;
+      padding: 0 !important;
+      width: auto !important;
+      page-break-inside: avoid !important;
+      display: table !important;
+    }
+    br { line-height: 1.1 !important; }
+    .email-header { 
+      margin-bottom: 6pt !important;
+      padding-bottom: 3pt !important;
+      border-bottom: 1px solid #ccc;
+    }
+    .hdr-subject { 
+      font-size: 14pt !important; 
+      font-weight: 700 !important; 
+      margin-bottom: 2pt !important;
+      line-height: 1.1 !important;
+    }
+    .hdr-meta { 
+      font-size: 10pt !important; 
+      line-height: 1.2 !important;
+    }
+    .hdr-meta div { 
+      margin: 1pt 0 !important;
+      padding: 0 !important;
+      line-height: 1.2 !important;
+    }
+    .attachments { 
+      margin-top: 6pt !important; 
+      padding-top: 4pt !important;
+      border-top: 1px solid #ccc;
+    }
+    .hdr-attachments { 
+      font-size: 12pt !important; 
+      font-weight: 600 !important; 
+      margin-bottom: 3pt !important;
+    }
+    .attachments ul { 
+      margin: 0 !important; 
+      padding-left: 15pt !important;
+    }
+    .attachments li { 
+      margin: 1pt 0 !important;
+      line-height: 1.2 !important;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="email-header">
+      <div class="hdr-meta">
+        <div><strong>From:</strong> &quot;Jaime McIver&quot; &lt;Jaime.McIver@crownlaw.qld.gov.au&gt;</div>
+        <div><strong>To:</strong> &quot;Decision Enquiry&quot; &lt;decisionenquiry@proton.me&gt;</div>
+        <div><strong>Subject:</strong> King -v- State of Queensland</div>
+        <div><strong>Date:</strong> Wed Dec 13 2023 15:09:46 GMT+1000 (Australian Eastern Standard Time)</div>
+      </div>
+    </div>
+  
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta name="Generator" content="Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-language:EN-US;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-language:EN-US;}
+
+
+/* List Definitions */
+@list l0
+	{mso-list-id:1268466487;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1039015536 201916431 201916441 201916443 201916431 201916441 201916443 201916431 201916441 201916443;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang="EN-AU" link="#0563C1" vlink="#954F72" style="word-wrap:break-word">
+<div>
+<p class="MsoNormal">Dear Mr King </p>
+<p class="MsoNormal"></p>
+<p class="MsoNormal">Please find <b>attached</b>: </p>
+<p class="MsoNormal"></p>
+<ol style="margin-top:0cm" start="1" type="1">
+<li class="MsoListParagraph" style="margin-left:0cm;mso-list:l0 level1 lfo1">My client&#8217;s outline of submissions; and</li><li class="MsoListParagraph" style="margin-left:0cm;mso-list:l0 level1 lfo1">Affidavit of Jaime McIver sworn 12 December 2023 which my client will seek leave to file and read tomorrow.
+</li></ol>
+<p class="MsoNormal"></p>
+<p class="MsoNormal"><span style="mso-fareast-language:EN-AU">Kind Regards</span></p>
+<p class="MsoNormal"><span style="mso-fareast-language:EN-AU"></span></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+<tbody>
+<tr>
+<td width="85" valign="top" style="width:63.55pt;padding:0cm 0cm 0cm 0cm">
+<p class="MsoNormal" style="line-height:105%"><span style="color:#1F497D;mso-fareast-language:EN-AU"><img width="73" height="91" style="width:.7604in;height:.9479in" id="Picture_x0020_1" src="data:image/png;base64,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"></span></p>
+</td>
+<td width="444" valign="top" style="width:333.1pt;padding:0cm 0cm 0cm 0cm">
+<p class="MsoNormal" style="line-height:105%"><b><span style="font-size:9.5pt;line-height:105%;color:#AC1414;mso-fareast-language:EN-AU">Jaime McIver</span></b></p>
+<p class="MsoNormal" style="line-height:105%"><span style="font-size:9.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU">Senior Lawyer | Commercial Dispute Resolution
+</span></p>
+<p class="MsoNormal" style="line-height:105%"><span style="font-size:9.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU">Native Title, Resources and Dispute Resolution
+</span></p>
+<p class="MsoNormal" style="line-height:105%"><b><span style="font-size:9.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU">Crown Law
+</span></b></p>
+<p class="MsoNormal" style="line-height:105%"><span style="font-size:4.0pt;line-height:105%;font-family:&quot;Book Antiqua&quot;,serif;color:#1F497D;mso-fareast-language:EN-AU">&nbsp;--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span></p>
+<p class="MsoNormal" style="line-height:105%"><b><span style="font-size:9.0pt;line-height:105%;color:#AC1414;mso-fareast-language:EN-AU">P
+</span></b><span style="font-size:9.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU">07 3031 5919&nbsp;</span><b><span style="font-size:9.0pt;line-height:105%;color:#AC1414;mso-fareast-language:EN-AU">E</span></b><b><span style="font-size:9.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU">
+</span></b><span style="font-size:9.0pt;line-height:105%;mso-fareast-language:EN-AU"><a href="mailto:jaime.mciver@crownlaw.qld.gov.au"><span style="color:#0563C1">jaime.mciver@crownlaw.qld.gov.au</span></a></span><u><span style="font-size:9.0pt;line-height:105%;color:#0563C1;mso-fareast-language:EN-AU"></span></u></p>
+<p class="MsoNormal" style="line-height:105%"><b><span style="font-size:9.0pt;line-height:105%;color:#AC1414;mso-fareast-language:EN-AU">A</span></b><span style="font-size:9.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU"> 50 Ann Street, Brisbane
+ QLD 4000&nbsp; </span><b><span style="font-size:9.0pt;line-height:105%;color:#AC1414;mso-fareast-language:EN-AU">W
+</span></b><u><span style="font-size:9.0pt;line-height:105%;color:blue;mso-fareast-language:EN-AU"><a href="http://www.crownlaw.qld.gov.au/"><span style="color:#0563C1">www.crownlaw.qld.gov.au</span></a></span></u><span style="font-size:8.0pt;line-height:105%;color:#1F497D;mso-fareast-language:EN-AU">
+</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="MsoNormal"><span style="mso-fareast-language:EN-AU"></span></p>
+<p class="MsoNormal"></p>
+</div>
+<font face="Calibri">
+<p>****************************************************************<br>
+</p>
+<p>Please think about the environment before you print this message.<br>
+</p>
+<p><div style="page-break-inside: avoid !important; break-inside: avoid !important; margin: 0 !important; padding: 0 !important; display: block !important;">This email and any attachments may contain confidential, private or legally privileged information and may be protected by copyright. You may only use it if you are the person(s) it was intended to be sent to and if you use it in an authorised way. No one
+ is allowed to use, review, alter, transmit, disclose, distribute, print or copy this email without appropriate authority.
+<br>
+</p>
+<p>If you are not the intended addressee and this message has been sent to you by mistake, please notify the sender immediately, destroy any hard copies of the email and delete it from your computer system network. Any legal privilege or confidentiality is
+ not waived or destroyed by the mistake. <br>
+</p>
+<p>It is your responsibility to ensure that this email does not contain and is not affected by computer viruses, defects or interferences by third parties or replication problems.
+<br>
+</p>
+<p>****************************************************************<br>
+</font></p>
+</body>
+</html>
+
+<div class="attachments"><div class="hdr-attachments">Attachments</div><ul><li>9. Defendant&#39;s Outline of Submissions 13.12.2023.pdf</li><li>6. Affidavit of Jaime McIver sworn 12.12.23.pdf</li></ul></div>
+</body>
+</html>
